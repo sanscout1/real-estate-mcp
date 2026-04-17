@@ -49,7 +49,8 @@ from __future__ import annotations
 
 from typing import Any
 
-import real_estate.mcp_server.tools.finance  # noqa: F401 — registers @mcp.tool()
+import real_estate.mcp_server.tools.building  # noqa: F401 — registers @mcp.tool()
+import real_estate.mcp_server.tools.finance  # noqa: F401
 import real_estate.mcp_server.tools.onbid  # noqa: F401
 import real_estate.mcp_server.tools.rent  # noqa: F401
 import real_estate.mcp_server.tools.subscription  # noqa: F401

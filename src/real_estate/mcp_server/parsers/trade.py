@@ -61,6 +61,7 @@ def _parse_apt_trades(xml_text: str) -> tuple[list[dict[str, Any]], str | None]:
             {
                 "apt_name": _txt(item, "aptNm"),
                 "dong": _txt(item, "umdNm"),
+                "jibun": _txt(item, "jibun"),
                 "area_sqm": _parse_float(_txt(item, "excluUseAr")),
                 "floor": _parse_int(_txt(item, "floor")),
                 "price_10k": price,
@@ -94,6 +95,7 @@ def _parse_officetel_trades(xml_text: str) -> tuple[list[dict[str, Any]], str | 
             {
                 "unit_name": _txt(item, "offiNm"),
                 "dong": _txt(item, "umdNm"),
+                "jibun": _txt(item, "jibun"),
                 "area_sqm": _parse_float(_txt(item, "excluUseAr")),
                 "floor": _parse_int(_txt(item, "floor")),
                 "price_10k": price,
@@ -129,6 +131,7 @@ def _parse_villa_trades(xml_text: str) -> tuple[list[dict[str, Any]], str | None
             {
                 "unit_name": _txt(item, "mhouseNm"),
                 "dong": _txt(item, "umdNm"),
+                "jibun": _txt(item, "jibun"),
                 "house_type": _txt(item, "houseType"),
                 "area_sqm": _parse_float(_txt(item, "excluUseAr")),
                 "floor": _parse_int(_txt(item, "floor")),
@@ -166,6 +169,7 @@ def _parse_single_house_trades(xml_text: str) -> tuple[list[dict[str, Any]], str
             {
                 "unit_name": "",  # not provided by this API
                 "dong": _txt(item, "umdNm"),
+                "jibun": _txt(item, "jibun"),
                 "house_type": _txt(item, "houseType"),
                 "area_sqm": _parse_float(_txt(item, "totalFloorAr")),
                 "floor": 0,  # not applicable for detached houses
@@ -205,6 +209,7 @@ def _parse_commercial_trade(xml_text: str) -> tuple[list[dict[str, Any]], str | 
                 "building_use": _txt(item, "buildingUse"),
                 "land_use": _txt(item, "landUse"),
                 "dong": _txt(item, "umdNm"),
+                "jibun": _txt(item, "jibun"),
                 "building_ar": _parse_float(_txt(item, "buildingAr")),
                 "floor": _parse_int(_txt(item, "floor")),
                 "price_10k": price,
